@@ -53,6 +53,13 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <url>http://192.168.33.10:8081/repository/nexus-repo/</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
