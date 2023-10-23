@@ -12,3 +12,4 @@ EXPOSE 8080
 
 # Specify the command to run your Spring Boot application
 CMD ["java", "-jar", "DevOps_Project-2.1.jar"]
+#1
