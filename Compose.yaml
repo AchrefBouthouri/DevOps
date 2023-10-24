@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    image: naceff/devops:latest
+    ports:
+      - "8088:8080"
+    depends_on:
+      - database
+
+
+  database:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: devops
