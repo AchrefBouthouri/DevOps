@@ -1,16 +1,42 @@
 version: '3'
-
 services:
-  backend:
+  # MySQL Database
+  mysqldb:
+    image: mysql
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devops
+    ports:
+      - 3306:3306
+    volumes:
+      - dockerAngularSpringDatabaseData:/var/lib/mysql
+    networks:
+      - back
+
+  # Spring Boot Backend
+  spring-backend:
     image: naceff/devops:latest
     ports:
-      - "8088:8080"
+      - "8089:8089"
     depends_on:
-      - database
+      - mysqldb
+    networks:
+      - back
 
+  # Angular Frontend
+  #angular-frontend:
+   # image: moez063719/achat_frontend:latest
+    #ports:
+     # - "8099:80"
+    #depends_on:
+     # - spring-backend
+    #networks:
+      #- back
 
-  database:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: devops
+volumes:
+  dockerAngularSpringDatabaseData:
+
+networks:
+  back:
+  front:
