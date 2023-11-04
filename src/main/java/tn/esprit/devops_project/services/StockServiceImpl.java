@@ -14,10 +14,6 @@ public class StockServiceImpl implements IStockService {
 
    private final StockRepository stockRepository;
 
-    public StockServiceImpl(StockRepository stockRepository) {
-        this.stockRepository = stockRepository;
-    }
-
     @Override
     public Stock addStock(Stock stock) {
         return stockRepository.save(stock);
