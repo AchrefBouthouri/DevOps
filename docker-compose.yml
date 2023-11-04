@@ -25,6 +25,15 @@ services:
     networks:
       - myappNetwork
 
+  # Angular app service
+  angular-app:
+    image: achrefbouthouri/devops-front:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - springboot-app
+    networks:
+      - myappNetwork
 
 networks:
   myappNetwork:
