@@ -82,6 +82,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+         <!-- Deploy to Nexus -->
+<distributionManagement>
+<repository>
+<id>nexus</id>
+<url>http://localhost:8081/repository/maven-releases/</url>
+</repository>
+</distributionManagement>
 
     <build>
         <plugins>
