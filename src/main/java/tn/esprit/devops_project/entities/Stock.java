@@ -23,4 +23,6 @@ public class Stock implements Serializable {
 
     public Stock(long l, String tv, Object o) {
     }
+
+
 }

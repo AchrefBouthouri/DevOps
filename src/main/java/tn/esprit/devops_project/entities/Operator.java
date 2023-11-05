@@ -32,5 +32,15 @@ public class Operator implements Serializable{
 	@OneToMany
 	@JsonIgnore
 	Set<Invoice> invoices;
-	
+
+	public Operator(long l, String john, String doe, String password, Object o) {
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public String getPassword() {
+		return password;
+	}
 }
