@@ -103,4 +103,27 @@ public class StockServiceImplTest {
         // Vérifiez que la méthode stockRepository.findAll() a été appelée une fois
         verify(stockRepository, times(1)).findAll();
     }
+    @Test
+    void testAddStock_NullInput() {
+        // Testez le cas où l'entrée est nulle (stockToSave)
+        when(stockRepository.save(null)).thenThrow(new IllegalArgumentException("Stock cannot be null"));
+
+        // Appelez la méthode de service à tester avec une entrée nulle et vérifiez qu'une exception appropriée est lancée
+        assertThrows(IllegalArgumentException.class, () -> {
+            stockService.addStock(null);
+        });
+    }
+
+    @Test
+    void testAddStock_DatabaseError() {
+        // Testez le cas où il y a une erreur lors de l'enregistrement dans la base de données
+        Stock stockToSave = new Stock();
+        when(stockRepository.save(stockToSave)).thenThrow(new RuntimeException("Database error"));
+
+        // Appelez la méthode de service à tester et vérifiez qu'une exception appropriée est lancée
+        assertThrows(RuntimeException.class, () -> {
+            stockService.addStock(stockToSave);
+        });
+    }
+
 }
