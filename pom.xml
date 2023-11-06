@@ -60,7 +60,7 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <url>http://localhost:8081/repository/maven-releases/</url>
+            <url>http://192.168.1.144:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version> <!-- Use the latest version -->
+                <version>0.8.6</version> <!-- Use the latest version -->
                 <executions>
                     <execution>
                         <goals>
