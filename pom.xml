@@ -15,7 +15,12 @@
     <description>DevOps_Project</description>
     <properties>
         <java.version>11</java.version>
+
+        <sonar.projectKey>tn.esprit:DevOps_Project</sonar.projectKey>
+        <sonar.host.url>http://192.168.33.10:9000</sonar.host.url>
+        <sonar.login>squ_5c2e035f6b595f64e67a173b8c12d47dfd029fa8</sonar.login>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
