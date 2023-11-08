@@ -4,7 +4,7 @@ services:
   # MySQL service
   mysql:
     image: mysql:latest
-    container_name: mysql
+    container_name: mysqldb
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: devops
@@ -13,13 +13,13 @@ services:
     networks:
       - myappNetwork
     volumes:
-      - mysql-data:/var/lib/mysql
+      - dockerAngularSpringDatabaseData:/var/lib/mysql
 
   # Spring Boot services
   springboot-app:
     image: karouihelmi/devops:latest
     ports:
-      - "8085:8085"
+      - "8082:8082"
     depends_on:
       - mysql
     networks:

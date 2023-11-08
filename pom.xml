@@ -10,15 +10,15 @@
     </parent>
     <groupId>tn.esprit</groupId>
     <artifactId>DevOps_Project</artifactId>
-    <version>1.0.0</version>
+    <version>2.1</version>
     <name>DevOps_Project</name>
     <description>DevOps_Project</description>
     <properties>
-        <java.version>1.7</java.version>
+        <java.version>11</java.version>
 
         <sonar.projectKey>tn.esprit:DevOps_Project</sonar.projectKey>
         <sonar.host.url>http://192.168.1.144:9000</sonar.host.url>
-        <sonar.login>qa_51ef59ef2edf8b448aa320eafbbaa8586a86ebf2</sonar.login>
+        <sonar.login>sqa_51ef59ef2edf8b448aa320eafbbaa8586a86ebf2</sonar.login>
     </properties>
 
     <dependencies>
@@ -77,7 +77,7 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <url>http://192.168.1.144:8081/repository/maven-releases/</url>
+            <url>http://192.168.1.144:8081/repository/nexus-repo/</url>
         </repository>
     </distributionManagement>
 
@@ -96,7 +96,7 @@
                 </configuration>
             </plugin>
 
-            <!-- JaCoCo Maven Plugin for code coverage -->
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -115,14 +115,6 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
             </plugin>
 
         </plugins>
