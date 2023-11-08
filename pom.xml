@@ -96,7 +96,7 @@
                 </configuration>
             </plugin>
 
-
+            <!-- JaCoCo Maven Plugin for code coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
